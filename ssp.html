@@ -288,7 +288,10 @@
             <br>
             <input type="checkbox" id="impl-3-1-5"> <label for="impl-3-1-5">Implemented</label>
             <input type="checkbox" id="planned-3-1-5"> <label for="planned-3-1-5">Planned to be Implemented</label>
-            <input type="checkbox"
+            <input type="checkbox" id="na-3-1-4"> <label for="na-3-1-4">Not Applicable</label>
+            <p>Assigns tasks to prevent a single person from controlling multiple steps in sensitive processes.</p>
+        </div>        
+
             <div class="requirement">
                 <label>3.1.6 Use non-privileged accounts or roles when accessing nonsecurity functions:</label>
                 <br>
@@ -1288,5 +1291,32 @@
                     <!-- Add more rows as necessary -->
                 </tbody>
             </table>
+
+                        <!-- Include the html2pdf.js library -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+            <!-- Your HTML content here -->
+
+            <!-- "Create PDF" button at the bottom -->
+            <div style="text-align: center; margin-top: 20px;">
+                <button onclick="createPDF()">Create PDF</button>
+            </div>
+
+            <script>
+                // Function to create PDF from HTML
+                function createPDF() {
+                    const element = document.body; // Selects the whole body for PDF generation
+                    const options = {
+                        filename: '9Brains_SSP_Document.pdf',
+                        image: { type: 'jpeg', quality: 0.98 },
+                        html2canvas: { scale: 2 },
+                        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                    };
+                    
+                    // Generate the PDF
+                    html2pdf().set(options).from(element).save();
+                }
+            </script>
+
 
 
