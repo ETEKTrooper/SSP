@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9Brains System Security Plan (SSP)</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            margin: 20px; 
+            color: #333; 
+        }
+        h1 { 
+            text-align: center; 
+            color: #2E4C6D; 
+        }
+        h2 { 
+            color: #2E4C6D; 
+            border-bottom: 1px solid #ddd; 
+            padding-bottom: 5px; 
+            margin-top: 20px;
+        }
+        .section { 
+            margin-bottom: 20px; 
+        }
+        .input-field { 
+            background-color: #f9f9f9; 
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            margin-top: 5px; 
+            border-radius: 5px;
+        }
+        .container { 
+            max-width: 800px; 
+            margin: auto; 
+        }
+        .requirement {
+            background-color: #e7f3ff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+        label { 
+            font-weight: bold; 
+            display: inline-block;
+        }
+        .section-header {
+            background-color: #4A90E2; 
+            color: white;
+            padding: 10px;
+            font-size: 1.2em;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .section-content {
+            background-color: #f2f2f2;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .requirement input[type="checkbox"] {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .requirement p {
+            margin-top: 10px;
+        }
+        h3 {
+            margin-top: 20px;
+            color: #333;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .record-table {
+            width: 100%;
+            margin-top: 15px;
+        }
+        .record-table th, .record-table td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        .record-table th {
+            background-color: #4A90E2;
+            color: white;
+        }
+        .record-table td input {
+            width: 100%;
+            padding: 4px;
+            box-sizing: border-box;
+        }
+
+            /* Table styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table th, table td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #4A90E2;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    table td {
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+
+    table tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>9Brains System Security Plan (SSP)</h1>
+
+    <!-- 1. SYSTEM IDENTIFICATION Section -->
+    <div class="section">
+        <h2>1. SYSTEM IDENTIFICATION</h2>
+        <div class="input-field">
+            <label>1.1. System Name/Title:</label> 9Brains Compliance Management System
+        </div>
+        <div class="input-field">
+            <label>1.1.1. System Categorization:</label> Moderate Impact for Confidentiality
+        </div>
+        <div class="input-field">
+            <label>1.1.2. System Unique Identifier:</label> 9B-CMS-001
+        </div>
+
+        <h3>1.2. Responsible Organization</h3>
+        <div class="input-field">
+            <label>Name:</label> Sravan Ankaraju, Chief Compliance Officer
+            <br>
+            <label>Address:</label> 123 Compliance St, 9Brains HQ, CA
+            <br>
+            <label>Phone:</label> (123) 456-7890
+        </div>
+
+        <!-- Information Owner -->
+        <div class="input-field">
+            <label>1.2.1 Information Owner (Government contact for CUI):</label>
+            <br>
+            Name: Guillermo Clark
+            <br>
+            Title: Federal Compliance Liaison
+            <br>
+            Office Address: 789 Federal Ave, Washington, DC
+            <br>
+            Phone: (123) 111-2222
+        </div>
+
+        <!-- System Owner -->
+        <div class="input-field">
+            <label>1.2.1.1 System Owner (assignment of security responsibility):</label>
+            <br>
+            Name: Cindy Luong
+            <br>
+            Title: IT Director
+            <br>
+            Office Address: 123 Compliance St, 9Brains HQ, CA
+            <br>
+            Work Phone: (123) 456-7890
+            <br>
+            Email: cindy.luong@9brains.us
+        </div>
+
+        <!-- System Security Officer -->
+        <div class="input-field">
+            <label>1.2.1.2 System Security Officer:</label>
+            <br>
+            Name: Bret Harder
+            <br>
+            Title: Information System Security Officer (ISSO)
+            <br>
+            Office Address: 123 Compliance St, 9Brains HQ, CA
+            <br>
+            Work Phone: (123) 555-7890
+            <br>
+            Email: bret.harder@9brains.us
+        </div>
+
+        <!-- General Description/Purpose of System -->
+        <div class="input-field">
+            <label>1.3 General Description/Purpose of System:</label> The 9Brains Compliance Management System automates and streamlines compliance tasks, focusing on PCI, ISO, SOC, and HITRUST assessments.
+        </div>
+
+        <!-- Number of end users and privileged users -->
+        <div class="input-field">
+            <label>1.3.1 Number of end users and privileged users:</label>
+            <table border="1" cellpadding="5" cellspacing="0" style="width: 100%;">
+                <tr>
+                    <th>Roles of Users</th>
+                    <th>Number of Users</th>
+                    <th>Number of Administrators/Privileged Users</th>
+                </tr>
+                <tr>
+                    <td>Standard User</td>
+                    <td>100</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>System Administrator</td>
+                    <td>0</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Database Administrator</td>
+                    <td>0</td>
+                    <td>3</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- General Description of Information -->
+        <div class="input-field">
+            <label>1.4 General Description of Information:</label> CUI information types processed, stored, or transmitted include sensitive compliance reports, audit data, and client documents.
+        </div>
+    </div>
+
+    <!-- Requirements -->
+    <h2>3. REQUIREMENTS</h2>
+    <p>(Source: NIST SP 800-171, December 2016)</p>
+
+    <!-- 3.1 Access Control -->
+    <div class="section">
+        <h3>3.1 Access Control</h3>
+
+        <div class="requirement">
+            <label>3.1.1 Limit system access to authorized users:</label>
+            <br>
+            <input type="checkbox" id="impl-3-1-1"> <label for="impl-3-1-1">Implemented</label>
+            <input type="checkbox" id="planned-3-1-1"> <label for="planned-3-1-1">Planned to be Implemented</label>
+            <input type="checkbox" id="na-3-1-1"> <label for="na-3-1-1">Not Applicable</label>
+            <p>Provides system access only to authorized users through Role-Based Access Control (RBAC).</p>
+        </div>
+
+        <div class="requirement">
+            <label>3.1.2 Limit system access to authorized transactions:</label>
+            <br>
+            <input type="checkbox" id="impl-3-1-2"> <label for="impl-3-1-2">Implemented</label>
+            <input type="checkbox" id="planned-3-1-2"> <label for="planned-3-1-2">Planned to be Implemented</label>
+            <input type="checkbox" id="na-3-1-2"> <label for="na-3-1-2">Not Applicable</label>
+            <p>Ensures users can perform only actions they are authorized for by restricting access to specific transactions.</p>
+        </div>
+
+        <div class="requirement">
+            <label>3.1.3 Control the flow of CUI in accordance with approved authorizations:</label>
+            <br>
+            <input type="checkbox" id="impl-3-1-3"> <label for="impl-3-1-3">Implemented</label>
+            <input type="checkbox" id="planned-3-1-3"> <label for="planned-3-1-3">Planned to be Implemented</label>
+            <input type="checkbox" id="na-3-1-3"> <label for="na-3-1-3">Not Applicable</label>
+            <p>Implements data flow controls to ensure that CUI is transmitted only as authorized.</p>
+        </div>
+
+        <div class="requirement">
+            <label>3.1.4 Separate the duties of individuals to reduce the risk of malevolent activity without collusion:</label>
+            <br>
+            <input type="checkbox" id="impl-3-1-4"> <label for="impl-3-1-4">Implemented</label>
+            <input type="checkbox" id="planned-3-1-4"> <label for="planned-3-1-4">Planned to be Implemented</label>
+            <input type="checkbox" id="na-3-1-4"> <label for="na-3-1-4">Not Applicable</label>
+            <p>Assigns tasks to prevent a single person from controlling multiple steps in sensitive processes.</p>
+        </div>
+
+        <div class="requirement">
+            <label>3.1.5 Employ the principle of least privilege:</label>
+            <br>
+            <input type="checkbox" id="impl-3-1-5"> <label for="impl-3-1-5">Implemented</label>
+            <input type="checkbox" id="planned-3-1-5"> <label for="planned-3-1-5">Planned to be Implemented</label>
+            <input type="checkbox"
+            <div class="requirement">
+                <label>3.1.6 Use non-privileged accounts or roles when accessing nonsecurity functions:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-6"> <label for="impl-3-1-6">Implemented</label>
+                <input type="checkbox" id="planned-3-1-6"> <label for="planned-3-1-6">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-6"> <label for="na-3-1-6">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.7 Prevent non-privileged users from executing privileged functions and audit the execution of such functions:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-7"> <label for="impl-3-1-7">Implemented</label>
+                <input type="checkbox" id="planned-3-1-7"> <label for="planned-3-1-7">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-7"> <label for="na-3-1-7">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.8 Limit unsuccessful logon attempts:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-8"> <label for="impl-3-1-8">Implemented</label>
+                <input type="checkbox" id="planned-3-1-8"> <label for="planned-3-1-8">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-8"> <label for="na-3-1-8">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.9 Provide privacy and security notices consistent with applicable CUI rules:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-9"> <label for="impl-3-1-9">Implemented</label>
+                <input type="checkbox" id="planned-3-1-9"> <label for="planned-3-1-9">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-9"> <label for="na-3-1-9">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.10 Use session lock with pattern-hiding displays to prevent access and viewing of data after a period of inactivity:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-10"> <label for="impl-3-1-10">Implemented</label>
+                <input type="checkbox" id="planned-3-1-10"> <label for="planned-3-1-10">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-10"> <label for="na-3-1-10">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.11 Terminate (automatically) a user session after a defined condition:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-11"> <label for="impl-3-1-11">Implemented</label>
+                <input type="checkbox" id="planned-3-1-11"> <label for="planned-3-1-11">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-11"> <label for="na-3-1-11">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.12 Monitor and control remote access sessions:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-12"> <label for="impl-3-1-12">Implemented</label>
+                <input type="checkbox" id="planned-3-1-12"> <label for="planned-3-1-12">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-12"> <label for="na-3-1-12">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.13 Employ cryptographic mechanisms to protect the confidentiality of remote access sessions:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-13"> <label for="impl-3-1-13">Implemented</label>
+                <input type="checkbox" id="planned-3-1-13"> <label for="planned-3-1-13">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-13"> <label for="na-3-1-13">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.14 Route remote access via managed access control points:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-14"> <label for="impl-3-1-14">Implemented</label>
+                <input type="checkbox" id="planned-3-1-14"> <label for="planned-3-1-14">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-14"> <label for="na-3-1-14">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.15 Authorize remote execution of privileged commands and remote access to security-relevant information:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-15"> <label for="impl-3-1-15">Implemented</label>
+                <input type="checkbox" id="planned-3-1-15"> <label for="planned-3-1-15">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-15"> <label for="na-3-1-15">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.16 Authorize wireless access prior to allowing such connections:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-16"> <label for="impl-3-1-16">Implemented</label>
+                <input type="checkbox" id="planned-3-1-16"> <label for="planned-3-1-16">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-16"> <label for="na-3-1-16">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.17 Protect wireless access using authentication and encryption:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-17"> <label for="impl-3-1-17">Implemented</label>
+                <input type="checkbox" id="planned-3-1-17"> <label for="planned-3-1-17">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-17"> <label for="na-3-1-17">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+
+            <div class="requirement">
+                <label>3.1.18 Control connection of mobile devices:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-18"> <label for="impl-3-1-18">Implemented</label>
+                <input type="checkbox" id="planned-3-1-18"> <label for="planned-3-1-18">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-18"> <label for="na-3-1-18">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.19 Encrypt CUI on mobile devices and mobile computing platforms:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-19"> <label for="impl-3-1-19">Implemented</label>
+                <input type="checkbox" id="planned-3-1-19"> <label for="planned-3-1-19">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-19"> <label for="na-3-1-19">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.20 Verify and control/limit connections to and use of external systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-20"> <label for="impl-3-1-20">Implemented</label>
+                <input type="checkbox" id="planned-3-1-20"> <label for="planned-3-1-20">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-20"> <label for="na-3-1-20">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.21 Limit use of organizational portable storage devices on external systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-21"> <label for="impl-3-1-21">Implemented</label>
+                <input type="checkbox" id="planned-3-1-21"> <label for="planned-3-1-21">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-21"> <label for="na-3-1-21">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.1.22 Control CUI posted or processed on publicly accessible systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-1-22"> <label for="impl-3-1-22">Implemented</label>
+                <input type="checkbox" id="planned-3-1-22"> <label for="planned-3-1-22">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-1-22"> <label for="na-3-1-22">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.2 Awareness and Training</h3>
+            
+            <div class="requirement">
+                <label>3.2.1 Ensure that managers, systems administrators, and users of organizational systems are made aware of the security risks associated with their activities and of the applicable policies, standards, and procedures related to the security of those systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-2-1"> <label for="impl-3-2-1">Implemented</label>
+                <input type="checkbox" id="planned-3-2-1"> <label for="planned-3-2-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-2-1"> <label for="na-3-2-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.2.2 Ensure that organizational personnel are adequately trained to carry out their assigned information security-related duties and responsibilities:</label>
+                <br>
+                <input type="checkbox" id="impl-3-2-2"> <label for="impl-3-2-2">Implemented</label>
+                <input type="checkbox" id="planned-3-2-2"> <label for="planned-3-2-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-2-2"> <label for="na-3-2-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.2.3 Provide security awareness training on recognizing and reporting potential indicators of insider threat:</label>
+                <br>
+                <input type="checkbox" id="impl-3-2-3"> <label for="impl-3-2-3">Implemented</label>
+                <input type="checkbox" id="planned-3-2-3"> <label for="planned-3-2-3">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-2-3"> <label for="na-3-2-3">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.3 Audit and Accountability</h3>
+            
+            <div class="requirement">
+                <label>3.3.1 Create and retain system audit logs and records to the extent needed to enable the monitoring, analysis, investigation, and reporting of unlawful or unauthorized system activity:</label>
+                <br>
+                <input type="checkbox" id="impl-3-3-1"> <label for="impl-3-3-1">Implemented</label>
+                <input type="checkbox" id="planned-3-3-1"> <label for="planned-3-3-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-3-1"> <label for="na-3-3-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.3.2 Ensure that the actions of individual system users can be uniquely traced to those users so they can be held accountable for their actions:</label>
+                <br>
+                <input type="checkbox" id="impl-3-3-2"> <label for="impl-3-3-2">Implemented</label>
+                <input type="checkbox" id="planned-3-3-2"> <label for="planned-3-3-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-3-2"> <label for="na-3-3-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.3.3 Review and update logged events:</label>
+                <br>
+                <input type="checkbox" id="impl-3-3-3"> <label for="impl-3-3-3">Implemented</label>
+                <input type="checkbox" id="planned-3-3-3"> <label for="planned-3-3-3">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-3-3"> <label for="na-3-3-3">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.3.4 Alert in the event of an audit logging process failure:</label>
+                <br>
+                <input type="checkbox" id="impl-3-3-4"> <label for="impl-3-3-4">Implemented</label>
+                <input type="checkbox" id="planned-3-3-4"> <label for="planned-3-3-4">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-3-4"> <label for="na-3-3-4">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+
+            <div class="requirement">
+                <label>3.3.5 Correlate audit record review, analysis, and reporting processes for investigation and response to indications of unlawful, unauthorized, suspicious, or unusual activity:</label>
+                <br>
+                <input type="checkbox" id="impl-3-3-5"> <label for="impl-3-3-5">Implemented</label>
+                <input type="checkbox" id="planned-3-3-5"> <label for="planned-3-3-5">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-3-5"> <label for="na-3-3-5">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.3.6 Provide audit record reduction and report generation to support on-demand analysis and reporting:</label>
+                <br>
+                <input type="checkbox" id="impl-3-3-6"> <label for="impl-3-3-6">Implemented</label>
+                <input type="checkbox" id="planned-3-3-6"> <label for="planned-3-3-6">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-3-6"> <label for="na-3-3-6">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.3.7 Provide a system capability that compares and synchronizes internal system clocks with an authoritative source to generate time stamps for audit records:</label>
+                <br>
+                <input type="checkbox" id="impl-3-3-7"> <label for="impl-3-3-7">Implemented</label>
+                <input type="checkbox" id="planned-3-3-7"> <label for="planned-3-3-7">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-3-7"> <label for="na-3-3-7">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.3.8 Protect audit information and audit logging tools from unauthorized access, modification, and deletion:</label>
+                <br>
+                <input type="checkbox" id="impl-3-3-8"> <label for="impl-3-3-8">Implemented</label>
+                <input type="checkbox" id="planned-3-3-8"> <label for="planned-3-3-8">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-3-8"> <label for="na-3-3-8">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.3.9 Limit management of audit logging functionality to a subset of privileged users:</label>
+                <br>
+                <input type="checkbox" id="impl-3-3-9"> <label for="impl-3-3-9">Implemented</label>
+                <input type="checkbox" id="planned-3-3-9"> <label for="planned-3-3-9">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-3-9"> <label for="na-3-3-9">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.4 Configuration Management</h3>
+            
+            <div class="requirement">
+                <label>3.4.1 Establish and maintain baseline configurations and inventories of organizational systems (including hardware, software, firmware, and documentation) throughout the respective system development life cycles:</label>
+                <br>
+                <input type="checkbox" id="impl-3-4-1"> <label for="impl-3-4-1">Implemented</label>
+                <input type="checkbox" id="planned-3-4-1"> <label for="planned-3-4-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-4-1"> <label for="na-3-4-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.4.2 Establish and enforce security configuration settings for information technology products employed in organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-4-2"> <label for="impl-3-4-2">Implemented</label>
+                <input type="checkbox" id="planned-3-4-2"> <label for="planned-3-4-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-4-2"> <label for="na-3-4-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.4.3 Track, review, approve or disapprove, and log changes to organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-4-3"> <label for="impl-3-4-3">Implemented</label>
+                <input type="checkbox" id="planned-3-4-3"> <label for="planned-3-4-3">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-4-3"> <label for="na-3-4-3">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.4.4 Analyze the security impact of changes prior to implementation:</label>
+                <br>
+                <input type="checkbox" id="impl-3-4-4"> <label for="impl-3-4-4">Implemented</label>
+                <input type="checkbox" id="planned-3-4-4"> <label for="planned-3-4-4">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-4-4"> <label for="na-3-4-4">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.4.5 Define, document, approve, and enforce physical and logical access restrictions associated with changes to organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-4-5"> <label for="impl-3-4-5">Implemented</label>
+                <input type="checkbox" id="planned-3-4-5"> <label for="planned-3-4-5">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-4-5"> <label for="na-3-4-5">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.4.6 Employ the principle of least functionality by configuring organizational systems to provide only essential capabilities:</label>
+                <br>
+                <input type="checkbox" id="impl-3-4-6"> <label for="impl-3-4-6">Implemented</label>
+                <input type="checkbox" id="planned-3-4-6"> <label for="planned-3-4-6">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-4-6"> <label for="na-3-4-6">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.4.7 Restrict, disable, or prevent the use of nonessential programs, functions, ports, protocols, and services:</label>
+                <br>
+                <input type="checkbox" id="impl-3-4-7"> <label for="impl-3-4-7">Implemented</label>
+                <input type="checkbox" id="planned-3-4-7"> <label for="planned-3-4-7">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-4-7"> <label for="na-3-4-7">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,”</p></div>
+            
+            <div class="requirement">
+                 <label>3.4.8 Apply deny-by-exception (blacklisting) policy to prevent the use of unauthorized software or deny-all, permit-by-exception (whitelisting) policy to allow the execution of authorized software:</label>
+                 <br>
+                 <input type="checkbox" id="impl-3-4-8"> <label for="impl-3-4-8">Implemented</label>
+                 <input type="checkbox" id="planned-3-4-8"> <label for="planned-3-4-8">Planned to be Implemented</label>
+                 <input type="checkbox" id="na-3-4-8"> <label for="na-3-4-8">Not Applicable</label>
+                 <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+                    
+            <div class="requirement">
+                <label>3.4.9 Control and monitor user-installed software:</label>
+                <br>
+                <input type="checkbox" id="impl-3-4-9"> <label for="impl-3-4-9">Implemented</label>
+                <input type="checkbox" id="planned-3-4-9"> <label for="planned-3-4-9">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-4-9"> <label for="na-3-4-9">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.5 Identification and Authentication</h3>
+            
+            <div class="requirement">
+                <label>3.5.1 Identify system users, processes acting on behalf of users, and devices:</label>
+                <br>
+                <input type="checkbox" id="impl-3-5-1"> <label for="impl-3-5-1">Implemented</label>
+                <input type="checkbox" id="planned-3-5-1"> <label for="planned-3-5-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-5-1"> <label for="na-3-5-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.5.2 Authenticate (or verify) the identities of users, processes, or devices, as a prerequisite to allowing access to organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-5-2"> <label for="impl-3-5-2">Implemented</label>
+                <input type="checkbox" id="planned-3-5-2"> <label for="planned-3-5-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-5-2"> <label for="na-3-5-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.5.3 Use multifactor authentication for local and network access to privileged accounts and for network access to non-privileged accounts:</label>
+                <br>
+                <input type="checkbox" id="impl-3-5-3"> <label for="impl-3-5-3">Implemented</label>
+                <input type="checkbox" id="planned-3-5-3"> <label for="planned-3-5-3">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-5-3"> <label for="na-3-5-3">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.5.4 Employ replay-resistant authentication mechanisms for network access to privileged and non-privileged accounts:</label>
+                <br>
+                <input type="checkbox" id="impl-3-5-4"> <label for="impl-3-5-4">Implemented</label>
+                <input type="checkbox" id="planned-3-5-4"> <label for="planned-3-5-4">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-5-4"> <label for="na-3-5-4">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.5.5 Prevent reuse of identifiers for a defined period:</label>
+                <br>
+                <input type="checkbox" id="impl-3-5-5"> <label for="impl-3-5-5">Implemented</label>
+                <input type="checkbox" id="planned-3-5-5"> <label for="planned-3-5-5">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-5-5"> <label for="na-3-5-5">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.5.6 Disable identifiers after a defined period of inactivity:</label>
+                <br>
+                <input type="checkbox" id="impl-3-5-6"> <label for="impl-3-5-6">Implemented</label>
+                <input type="checkbox" id="planned-3-5-6"> <label for="planned-3-5-6">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-5-6"> <label for="na-3-5-6">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.5.7 Enforce a minimum password complexity and change of characters when new passwords are created:</label>
+                <br>
+                <input type="checkbox" id="impl-3-5-7"> <label for="impl-3-5-7">Implemented</label>
+                <input type="checkbox" id="planned-3-5-7"> <label for="planned-3-5-7">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-5-7"> <label for="na-3-5-7">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.5.8 Prohibit password reuse for a specified number of generations:</label>
+                <br>
+                <input type="checkbox" id="impl-3-5-8"> <label for="impl-3-5-8">Implemented</label>
+                <input type="checkbox" id="planned-3-5-8"> <label for="planned-3-5-8">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-5-8"> <label for="na-3-5-8">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.5.9 Allow temporary password use for system logons with an immediate change to a permanent password:</label>
+                <br>
+                <input type="checkbox" id="impl-3-5-9"> <label for="impl-3-5-9">Implemented</label>
+                <input type="checkbox" id="planned-3-5-9"> <label for="planned-3-5-9">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-5-9"> <label for="na-3-5-9">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.5.10 Store and transmit only cryptographically-protected passwords:</label>
+                <br>
+                <input type="checkbox" id="impl-3-5-10"> <label for="impl-3-5-10">Implemented</label>
+                <input type="checkbox" id="planned-3-5-10"> <label for="planned-3-5-10">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-5-10"> <label for="na-3-5-10">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+
+            <div class="requirement">
+                <label>3.5.11 Obscure feedback of authentication information:</label>
+                <br>
+                <input type="checkbox" id="impl-3-5-11"> <label for="impl-3-5-11">Implemented</label>
+                <input type="checkbox" id="planned-3-5-11"> <label for="planned-3-5-11">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-5-11"> <label for="na-3-5-11">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.6 Incident Response</h3>
+            
+            <div class="requirement">
+                <label>3.6.1 Establish an operational incident-handling capability for organizational systems that includes preparation, detection, analysis, containment, recovery, and user response activities:</label>
+                <br>
+                <input type="checkbox" id="impl-3-6-1"> <label for="impl-3-6-1">Implemented</label>
+                <input type="checkbox" id="planned-3-6-1"> <label for="planned-3-6-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-6-1"> <label for="na-3-6-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.6.2 Track, document, and report incidents to designated officials and/or authorities both internal and external to the organization:</label>
+                <br>
+                <input type="checkbox" id="impl-3-6-2"> <label for="impl-3-6-2">Implemented</label>
+                <input type="checkbox" id="planned-3-6-2"> <label for="planned-3-6-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-6-2"> <label for="na-3-6-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.6.3 Test the organizational incident response capability:</label>
+                <br>
+                <input type="checkbox" id="impl-3-6-3"> <label for="impl-3-6-3">Implemented</label>
+                <input type="checkbox" id="planned-3-6-3"> <label for="planned-3-6-3">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-6-3"> <label for="na-3-6-3">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.7 Maintenance</h3>
+            
+            <div class="requirement">
+                <label>3.7.1 Perform maintenance on organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-7-1"> <label for="impl-3-7-1">Implemented</label>
+                <input type="checkbox" id="planned-3-7-1"> <label for="planned-3-7-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-7-1"> <label for="na-3-7-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.7.2 Provide controls on the tools, techniques, mechanisms, and personnel used to conduct system maintenance:</label>
+                <br>
+                <input type="checkbox" id="impl-3-7-2"> <label for="impl-3-7-2">Implemented</label>
+                <input type="checkbox" id="planned-3-7-2"> <label for="planned-3-7-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-7-2"> <label for="na-3-7-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.7.3 Ensure equipment removed for off-site maintenance is sanitized of any CUI:</label>
+                <br>
+                <input type="checkbox" id="impl-3-7-3"> <label for="impl-3-7-3">Implemented</label>
+                <input type="checkbox" id="planned-3-7-3"> <label for="planned-3-7-3">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-7-3"> <label for="na-3-7-3">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.7.4 Check media containing diagnostic and test programs for malicious code before the media are used in organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-7-4"> <label for="impl-3-7-4">Implemented</label>
+                <input type="checkbox" id="planned-3-7-4"> <label for="planned-3-7-4">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-7-4"> <label for="na-3-7-4">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.7.5 Require multifactor authentication to establish nonlocal maintenance sessions via external network connections and terminate such connections when nonlocal maintenance is complete:</label>
+                <br>
+                <input type="checkbox" id="impl-3-7-5"> <label for="impl-3-7-5">Implemented</label>
+                <input type="checkbox" id="planned-3-7-5"> <label for="planned-3-7-5">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-7-5"> <label for="na-3-7-5">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.7.6 Supervise the maintenance activities of maintenance personnel without required access authorization:</label>
+                <br>
+                <input type="checkbox" id="impl-3-7-6"> <label for="impl-3-7-6">Implemented</label>
+                <input type="checkbox" id="planned-3-7-6"> <label for="planned-3-7-6">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-7-6"> <label for="na-3-7-6">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.8 Media Protection</h3>
+            
+            <div class="requirement">
+                <label>3.8.1 Protect (i.e., physically control and securely store) system media containing CUI, both paper and digital:</label>
+                <br>
+                <input type="checkbox" id="impl-3-8-1"> <label for="impl-3-8-1">Implemented</label>
+                <input type="checkbox" id="planned-3-8-1"> <label for="planned-3-8-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-8-1"> <label for="na-3-8-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.8.2 Limit access to CUI on system media to authorized users:</label>
+                <br>
+                <input type="checkbox" id="impl-3-8-2"> <label for="impl-3-8-2">Implemented</label>
+                <input type="checkbox" id="planned-3-8-2"> <label for="planned-3-8-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-8-2"> <label for="na-3-8-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+
+            <div class="requirement">
+                <label>3.8.3 Sanitize or destroy system media containing CUI before disposal or release for reuse:</label>
+                <br>
+                <input type="checkbox" id="impl-3-8-3"> <label for="impl-3-8-3">Implemented</label>
+                <input type="checkbox" id="planned-3-8-3"> <label for="planned-3-8-3">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-8-3"> <label for="na-3-8-3">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.8.4 Mark media with necessary CUI markings and distribution limitations:</label>
+                <br>
+                <input type="checkbox" id="impl-3-8-4"> <label for="impl-3-8-4">Implemented</label>
+                <input type="checkbox" id="planned-3-8-4"> <label for="planned-3-8-4">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-8-4"> <label for="na-3-8-4">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.8.5 Control access to media containing CUI and maintain accountability for media during transport outside of controlled areas:</label>
+                <br>
+                <input type="checkbox" id="impl-3-8-5"> <label for="impl-3-8-5">Implemented</label>
+                <input type="checkbox" id="planned-3-8-5"> <label for="planned-3-8-5">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-8-5"> <label for="na-3-8-5">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.8.6 Implement cryptographic mechanisms to protect the confidentiality of CUI stored on digital media during transport unless otherwise protected by alternative physical safeguards:</label>
+                <br>
+                <input type="checkbox" id="impl-3-8-6"> <label for="impl-3-8-6">Implemented</label>
+                <input type="checkbox" id="planned-3-8-6"> <label for="planned-3-8-6">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-8-6"> <label for="na-3-8-6">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.8.7 Control the use of removable media on system components:</label>
+                <br>
+                <input type="checkbox" id="impl-3-8-7"> <label for="impl-3-8-7">Implemented</label>
+                <input type="checkbox" id="planned-3-8-7"> <label for="planned-3-8-7">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-8-7"> <label for="na-3-8-7">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.8.8 Prohibit the use of portable storage devices when such devices have no identifiable owner:</label>
+                <br>
+                <input type="checkbox" id="impl-3-8-8"> <label for="impl-3-8-8">Implemented</label>
+                <input type="checkbox" id="planned-3-8-8"> <label for="planned-3-8-8">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-8-8"> <label for="na-3-8-8">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.8.9 Protect the confidentiality of backup CUI at storage locations:</label>
+                <br>
+                <input type="checkbox" id="impl-3-8-9"> <label for="impl-3-8-9">Implemented</label>
+                <input type="checkbox" id="planned-3-8-9"> <label for="planned-3-8-9">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-8-9"> <label for="na-3-8-9">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.9 Personnel Security</h3>
+            
+            <div class="requirement">
+                <label>3.9.1 Screen individuals prior to authorizing access to organizational systems containing CUI:</label>
+                <br>
+                <input type="checkbox" id="impl-3-9-1"> <label for="impl-3-9-1">Implemented</label>
+                <input type="checkbox" id="planned-3-9-1"> <label for="planned-3-9-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-9-1"> <label for="na-3-9-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.9.2 Ensure that organizational systems containing CUI are protected during and after personnel actions such as terminations and transfers:</label>
+                <br>
+                <input type="checkbox" id="impl-3-9-2"> <label for="impl-3-9-2">Implemented</label>
+                <input type="checkbox" id="planned-3-9-2"> <label for="planned-3-9-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-9-2"> <label for="na-3-9-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.10 Physical Protection</h3>
+            
+            <div class="requirement">
+                <label>3.10.1 Limit physical access to organizational systems, equipment, and the respective operating environments to authorized individuals:</label>
+                <br>
+                <input type="checkbox" id="impl-3-10-1"> <label for="impl-3-10-1">Implemented</label>
+                <input type="checkbox" id="planned-3-10-1"> <label for="planned-3-10-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-10-1"> <label for="na-3-10-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.10.2 Protect and monitor the physical facility and support infrastructure for organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-10-2"> <label for="impl-3-10-2">Implemented</label>
+                <input type="checkbox" id="planned-3-10-2"> <label for="planned-3-10-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-10-2"> <label for="na-3-10-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.10.3 Escort visitors and monitor visitor activity:</label>
+                <br>
+                <input type="checkbox" id="impl-3-10-3"> <label for="impl-3-10-3">Implemented</label>
+                <input type="checkbox" id="planned-3-10-3"> <label for="planned-3-10-3">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-10-3"> <label for="na-3-10-3">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+
+            <div class="requirement">
+                <label>3.10.4 Maintain audit logs of physical access:</label>
+                <br>
+                <input type="checkbox" id="impl-3-10-4"> <label for="impl-3-10-4">Implemented</label>
+                <input type="checkbox" id="planned-3-10-4"> <label for="planned-3-10-4">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-10-4"> <label for="na-3-10-4">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.10.5 Control and manage physical access devices:</label>
+                <br>
+                <input type="checkbox" id="impl-3-10-5"> <label for="impl-3-10-5">Implemented</label>
+                <input type="checkbox" id="planned-3-10-5"> <label for="planned-3-10-5">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-10-5"> <label for="na-3-10-5">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.10.6 Enforce safeguarding measures for CUI at alternate work sites:</label>
+                <br>
+                <input type="checkbox" id="impl-3-10-6"> <label for="impl-3-10-6">Implemented</label>
+                <input type="checkbox" id="planned-3-10-6"> <label for="planned-3-10-6">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-10-6"> <label for="na-3-10-6">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.11 Risk Assessment</h3>
+            
+            <div class="requirement">
+                <label>3.11.1 Periodically assess the risk to organizational operations (including mission, functions, image, or reputation), organizational assets, and individuals, resulting from the operation of organizational systems and the associated processing, storage, or transmission of CUI:</label>
+                <br>
+                <input type="checkbox" id="impl-3-11-1"> <label for="impl-3-11-1">Implemented</label>
+                <input type="checkbox" id="planned-3-11-1"> <label for="planned-3-11-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-11-1"> <label for="na-3-11-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.11.2 Scan for vulnerabilities in organizational systems and applications periodically and when new vulnerabilities affecting those systems and applications are identified:</label>
+                <br>
+                <input type="checkbox" id="impl-3-11-2"> <label for="impl-3-11-2">Implemented</label>
+                <input type="checkbox" id="planned-3-11-2"> <label for="planned-3-11-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-11-2"> <label for="na-3-11-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.11.3 Remediate vulnerabilities in accordance with risk assessments:</label>
+                <br>
+                <input type="checkbox" id="impl-3-11-3"> <label for="impl-3-11-3">Implemented</label>
+                <input type="checkbox" id="planned-3-11-3"> <label for="planned-3-11-3">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-11-3"> <label for="na-3-11-3">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.12 Security Assessment</h3>
+            
+            <div class="requirement">
+                <label>3.12.1 Periodically assess the security controls in organizational systems to determine if the controls are effective in their application:</label>
+                <br>
+                <input type="checkbox" id="impl-3-12-1"> <label for="impl-3-12-1">Implemented</label>
+                <input type="checkbox" id="planned-3-12-1"> <label for="planned-3-12-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-12-1"> <label for="na-3-12-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.12.2 Develop and implement plans of action designed to correct deficiencies and reduce or eliminate vulnerabilities in organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-12-2"> <label for="impl-3-12-2">Implemented</label>
+                <input type="checkbox" id="planned-3-12-2"> <label for="planned-3-12-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-12-2"> <label for="na-3-12-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.12.3 Monitor security controls on an ongoing basis to ensure the continued effectiveness of the controls:</label>
+                <br>
+                <input type="checkbox" id="impl-3-12-3"> <label for="impl-3-12-3">Implemented</label>
+                <input type="checkbox" id="planned-3-12-3"> <label for="planned-3-12-3">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-12-3"> <label for="na-3-12-3">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.12.4 Develop, document, and periodically update system security plans that describe system boundaries, system environments of operation, how security requirements are implemented, and the relationships with or connections to other systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-12-4"> <label for="impl-3-12-4">Implemented</label>
+                <input type="checkbox" id="planned-3-12-4"> <label for="planned-3-12-4">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-12-4"> <label for="na-3-12-4">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.13 System and Communications Protection</h3>
+            
+            <div class="requirement">
+                <label>3.13.1 Monitor, control, and protect communications (i.e., information transmitted or received by organizational systems) at the external boundaries and key internal boundaries of organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-1"> <label for="impl-3-13-1">Implemented</label>
+                <input type="checkbox" id="planned-3-13-1"> <label for="planned-3-13-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-1"> <label for="na-3-13-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+
+            <div class="requirement">
+                <label>3.13.2 Employ architectural designs, software development techniques, and systems engineering principles that promote effective information security within organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-2"> <label for="impl-3-13-2">Implemented</label>
+                <input type="checkbox" id="planned-3-13-2"> <label for="planned-3-13-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-2"> <label for="na-3-13-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.3 Separate user functionality from system management functionality:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-3"> <label for="impl-3-13-3">Implemented</label>
+                <input type="checkbox" id="planned-3-13-3"> <label for="planned-3-13-3">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-3"> <label for="na-3-13-3">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.4 Prevent unauthorized and unintended information transfer via shared system resources:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-4"> <label for="impl-3-13-4">Implemented</label>
+                <input type="checkbox" id="planned-3-13-4"> <label for="planned-3-13-4">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-4"> <label for="na-3-13-4">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.5 Implement subnetworks for publicly accessible system components that are physically or logically separated from internal networks:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-5"> <label for="impl-3-13-5">Implemented</label>
+                <input type="checkbox" id="planned-3-13-5"> <label for="planned-3-13-5">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-5"> <label for="na-3-13-5">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.6 Deny network communications traffic by default and allow network communications traffic by exception (i.e., deny all, permit by exception):</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-6"> <label for="impl-3-13-6">Implemented</label>
+                <input type="checkbox" id="planned-3-13-6"> <label for="planned-3-13-6">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-6"> <label for="na-3-13-6">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.7 Prevent remote devices from simultaneously establishing non-remote connections with organizational systems and communicating via some other connection to resources in external networks (i.e., split tunneling):</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-7"> <label for="impl-3-13-7">Implemented</label>
+                <input type="checkbox" id="planned-3-13-7"> <label for="planned-3-13-7">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-7"> <label for="na-3-13-7">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.8 Implement cryptographic mechanisms to prevent unauthorized disclosure of CUI during transmission unless otherwise protected by alternative physical safeguards:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-8"> <label for="impl-3-13-8">Implemented</label>
+                <input type="checkbox" id="planned-3-13-8"> <label for="planned-3-13-8">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-8"> <label for="na-3-13-8">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.9 Terminate network connections associated with communications sessions at the end of the sessions or after a defined period of inactivity:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-9"> <label for="impl-3-13-9">Implemented</label>
+                <input type="checkbox" id="planned-3-13-9"> <label for="planned-3-13-9">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-9"> <label for="na-3-13-9">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.10 Establish and manage cryptographic keys for cryptography employed in organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-10"> <label for="impl-3-13-10">Implemented</label>
+                <input type="checkbox" id="planned-3-13-10"> <label for="planned-3-13-10">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-10"> <label for="na-3-13-10">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.11 Employ FIPS-validated cryptography when used to protect the confidentiality of CUI:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-11"> <label for="impl-3-13-11">Implemented</label>
+                <input type="checkbox" id="planned-3-13-11"> <label for="planned-3-13-11">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-11"> <label for="na-3-13-11">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.12 Prohibit remote activation of collaborative computing devices and provide indication of devices in use to users present at the device:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-12"> <label for="impl-3-13-12">Implemented</label>
+                <input type="checkbox" id="planned-3-13-12"> <label for="planned-3-13-12">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-12"> <label for="na-3-13-12">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.13 Control and monitor the use of mobile code:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-13"> <label for="impl-3-13-13">Implemented</label>
+                <input type="checkbox" id="planned-3-13-13"> <label for="planned-3-13-13">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-13"> <label for="na-3-13-13">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+
+            <div class="requirement">
+                <label>3.13.14 Control and monitor the use of Voice over Internet Protocol (VoIP) technologies:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-14"> <label for="impl-3-13-14">Implemented</label>
+                <input type="checkbox" id="planned-3-13-14"> <label for="planned-3-13-14">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-14"> <label for="na-3-13-14">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.15 Protect the authenticity of communications sessions:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-15"> <label for="impl-3-13-15">Implemented</label>
+                <input type="checkbox" id="planned-3-13-15"> <label for="planned-3-13-15">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-15"> <label for="na-3-13-15">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.13.16 Protect the confidentiality of CUI at rest:</label>
+                <br>
+                <input type="checkbox" id="impl-3-13-16"> <label for="impl-3-13-16">Implemented</label>
+                <input type="checkbox" id="planned-3-13-16"> <label for="planned-3-13-16">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-13-16"> <label for="na-3-13-16">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <h3>3.14 System and Information Integrity</h3>
+            
+            <div class="requirement">
+                <label>3.14.1 Identify, report, and correct system flaws in a timely manner:</label>
+                <br>
+                <input type="checkbox" id="impl-3-14-1"> <label for="impl-3-14-1">Implemented</label>
+                <input type="checkbox" id="planned-3-14-1"> <label for="planned-3-14-1">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-14-1"> <label for="na-3-14-1">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.14.2 Provide protection from malicious code at designated locations within organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-14-2"> <label for="impl-3-14-2">Implemented</label>
+                <input type="checkbox" id="planned-3-14-2"> <label for="planned-3-14-2">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-14-2"> <label for="na-3-14-2">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.14.3 Monitor system security alerts and advisories and take action in response:</label>
+                <br>
+                <input type="checkbox" id="impl-3-14-3"> <label for="impl-3-14-3">Implemented</label>
+                <input type="checkbox" id="planned-3-14-3"> <label for="planned-3-14-3">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-14-3"> <label for="na-3-14-3">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.14.4 Update malicious code protection mechanisms when new releases are available:</label>
+                <br>
+                <input type="checkbox" id="impl-3-14-4"> <label for="impl-3-14-4">Implemented</label>
+                <input type="checkbox" id="planned-3-14-4"> <label for="planned-3-14-4">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-14-4"> <label for="na-3-14-4">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.14.5 Perform periodic scans of organizational systems and real-time scans of files from external sources as files are downloaded, opened, or executed:</label>
+                <br>
+                <input type="checkbox" id="impl-3-14-5"> <label for="impl-3-14-5">Implemented</label>
+                <input type="checkbox" id="planned-3-14-5"> <label for="planned-3-14-5">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-14-5"> <label for="na-3-14-5">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.14.6 Monitor organizational systems, including inbound and outbound communications traffic, to detect attacks and indicators of potential attacks:</label>
+                <br>
+                <input type="checkbox" id="impl-3-14-6"> <label for="impl-3-14-6">Implemented</label>
+                <input type="checkbox" id="planned-3-14-6"> <label for="planned-3-14-6">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-14-6"> <label for="na-3-14-6">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>
+            
+            <div class="requirement">
+                <label>3.14.7 Identify unauthorized use of organizational systems:</label>
+                <br>
+                <input type="checkbox" id="impl-3-14-7"> <label for="impl-3-14-7">Implemented</label>
+                <input type="checkbox" id="planned-3-14-7"> <label for="planned-3-14-7">Planned to be Implemented</label>
+                <input type="checkbox" id="na-3-14-7"> <label for="na-3-14-7">Not Applicable</label>
+                <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
+            </div>        
+                    
+            <h3>4. Record of Changes</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Made By</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="Enter Date"></td>
+                        <td><input type="text" placeholder="Enter Description"></td>
+                        <td><input type="text" placeholder="Enter Name"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="Enter Date"></td>
+                        <td><input type="text" placeholder="Enter Description"></td>
+                        <td><input type="text" placeholder="Enter Name"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="Enter Date"></td>
+                        <td><input type="text" placeholder="Enter Description"></td>
+                        <td><input type="text" placeholder="Enter Name"></td>
+                    </tr>
+                    <!-- Add more rows as necessary -->
+                </tbody>
+            </table>
+
+
