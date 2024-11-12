@@ -11,19 +11,23 @@
             margin: 20px; 
             color: #333; 
         }
+        
         h1 { 
             text-align: center; 
             color: #2E4C6D; 
         }
+        
         h2 { 
             color: #2E4C6D; 
             border-bottom: 1px solid #ddd; 
             padding-bottom: 5px; 
             margin-top: 20px;
         }
+        
         .section { 
             margin-bottom: 20px; 
         }
+        
         .input-field { 
             background-color: #f9f9f9; 
             padding: 10px; 
@@ -31,21 +35,56 @@
             margin-top: 5px; 
             border-radius: 5px;
         }
+        
+        /* Centering container */
         .container { 
             max-width: 800px; 
-            margin: auto; 
+            margin: 0 auto; /* Centers the container horizontally */
+            padding-top: 20px; /* Adds padding at the top */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+        
+        /* Requirement styling */
         .requirement {
             background-color: #e7f3ff;
-            padding: 15px;
-            margin-bottom: 15px;
+            padding: 20px; /* Increase padding for better spacing */
+            margin-bottom: 20px; /* Add more spacing between each requirement */
             border-radius: 5px;
             line-height: 1.6;
+            width: 90%; /* Keeps the requirement box within 90% of the container width */
+            max-width: 700px; /* Set a maximum width for readability */
+            margin-left: auto; /* Centers the requirement box */
+            margin-right: auto; /* Centers the requirement box */
         }
-        label { 
-            font-weight: bold; 
+        
+        .requirement label {
+            font-weight: bold;
             display: inline-block;
+            margin-bottom: 10px; /* Adds space between label and checkboxes */
         }
+        
+        .requirement input[type="checkbox"] {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        
+        .requirement p {
+            margin-top: 10px;
+            text-align: left; /* Ensures text inside requirements is aligned left */
+        }
+        .diagram-header {
+            background-color: #f2f2f2; /* Light grey background */
+            color: #333;               /* Darker text color */
+            padding: 10px;
+            font-size: 1.1em;
+            text-align: center;
+            border-radius: 5px;        /* Rounded corners */
+            margin-top: 20px;
+            width: 100%;               /* Ensures it aligns with other sections */
+        }
+        /* Section header styling */
         .section-header {
             background-color: #4A90E2; 
             color: white;
@@ -54,81 +93,91 @@
             text-align: center;
             border-radius: 5px;
         }
+        
+        /* Section content styling */
         .section-content {
             background-color: #f2f2f2;
             padding: 15px;
             margin-bottom: 15px;
             border-radius: 8px;
         }
-        .requirement input[type="checkbox"] {
-            margin-right: 5px;
-            vertical-align: middle;
+        
+        label { 
+            font-weight: bold; 
+            display: inline-block;
         }
-        .requirement p {
-            margin-top: 10px;
-        }
+        
+        /* h3 styling */
         h3 {
             margin-top: 20px;
             color: #333;
             background-color: #f0f0f0;
             padding: 10px;
             border-radius: 5px;
+            text-align: center;
         }
+        
+        /* Record table styling */
         .record-table {
             width: 100%;
             margin-top: 15px;
         }
+        
         .record-table th, .record-table td {
             padding: 8px;
             text-align: left;
             border: 1px solid #ddd;
         }
+        
         .record-table th {
             background-color: #4A90E2;
             color: white;
         }
+        
         .record-table td input {
             width: 100%;
             padding: 4px;
             box-sizing: border-box;
         }
-
-            /* Table styling */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
-
-    table th, table td {
-        padding: 10px;
-        text-align: left;
-        border: 1px solid #ddd;
-    }
-
-    table th {
-        background-color: #4A90E2;
-        color: white;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    table td {
-        background-color: #f9f9f9;
-        text-align: center;
-    }
-
-    table tr:hover {
-        background-color: #f1f1f1;
-    }
-
-    input[type="text"] {
-        width: 100%;
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
+        
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: #4A90E2;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        table td {
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        /* Input field styling */
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
     </style>
 </head>
 <body>
@@ -238,14 +287,113 @@
             <label>1.4 General Description of Information:</label> CUI information types processed, stored, or transmitted include sensitive compliance reports, audit data, and client documents.
         </div>
     </div>
+    <div class="section">
+        <h2>2. SYSTEM ENVIRONMENT</h2>
+        <p>The System Environment details the layout and interconnected components within the 9Brains Compliance Management System (CMS). This setup includes defined boundaries, interconnections, and critical devices that support secure and efficient operations.</p>
 
-    <!-- Requirements -->
-    <h2>3. REQUIREMENTS</h2>
-    <p>(Source: NIST SP 800-171, December 2016)</p>
+        <h3>Topology Narrative and Diagram</h3>
+        <p>The following narrative outlines the layout and functionality of each component within the system:</p>
+
+        <ul>
+            <li><strong>Internet:</strong> The system connects to the external network through a firewall, ensuring secure access and data protection from external threats.</li>
+            <li><strong>Firewall:</strong> Positioned at the system boundary, the firewall regulates inbound and outbound network traffic, providing a primary layer of security.</li>
+            <li><strong>Routers:</strong> Router A and Router B distribute network traffic to various parts of the system, supporting load balancing and redundancy for improved reliability.</li>
+            <li><strong>Switches:</strong>
+                <ul>
+                    <li>Switch A and Switch B connect to multiple workstations, supporting different operating systems (Unix/Linux, Windows, Mac OS) to ensure network-wide connectivity.</li>
+                    <li>DMZ Switch connects to servers accessible from outside the internal network, supporting internet-accessible services while isolating internal network components for security.</li>
+                </ul>
+            </li>
+            <li><strong>Servers:</strong>
+                <ul>
+                    <li>Web Server: Hosts and serves web applications.</li>
+                    <li>Database Server: Manages and stores data securely.</li>
+                    <li>Application Server: Hosts application-specific services.</li>
+                    <li>File Server: Provides storage and management for files within the system.</li>
+                </ul>
+            </li>
+            <li><strong>Secure Internal Network:</strong> Connected through a Core Switch that allows communication between servers, workstations, and peripheral devices within the system, maintaining internal security and data integrity.</li>
+            <li><strong>Workstations:</strong> Different workstations support various operating systems (Unix/Linux, Windows, Mac OS), allowing for platform diversity across the system.</li>
+            <li><strong>Peripheral Devices:</strong> Printer, Copier, and Lab Equipment provide support to workstations and offer functionality for data handling and reporting.</li>
+            <li><strong>Mobile Devices and Portable Components:</strong> Mobile Devices (e.g., laptops) and Portable Components ensure flexibility, supporting remote access and field work within secure parameters.</li>
+        </ul>
+
+        <div class="diagram">
+            <h3>Diagram Representation</h3>
+            <pre>
+                                                 Internet
+                                                    │
+                                            +--------------+
+                                            |   Firewall   |
+                                            +--------------+
+                                                    │
+                                        +-----------+-----------+
+                                        |                       |
+                                    Router A                 Router B
+                                        │                       │
+                            +-----------+-----------+   +-------+-------+
+                            |                       |   |               |
+                          Switch A               Switch B            DMZ Switch
+                              │                       │                   │
+                    +-----------+-----------+    +------+----+       +------+------+    
+                    |                       |    |           |       |             |
+                Web Server           Database Server     App Server      File Server
+                                                     |
+                                                     │
+                                          +----------+---------+
+                                          |       Secure       |
+                                          |  Internal Network  |
+                                          +----------+---------+
+                                                     │
+                                                Core Switch
+                                                     │
+                             +-----------------------+-----------------------+
+                             |                       |                       |
+                        Workstation             Workstation             Workstation
+                       (Unix/Linux)              (Windows)               (Mac OS)
+                             │                       │                       │
+                          Printer                 Copier               Lab Equipment
+                             │                       │                       │
+                      +-------------+          +------------+          +------------+
+                      | Mobile Devices|        | Portable   |          | Portable   |
+                      |   (Laptops)   |        | Components |          | Components |
+                      +-------------+          +------------+          +------------+
+            </pre>
+        </div>
+
+        <h3>2.1 Hardware and Software Inventory</h3>
+        <p>All hardware and software components, including make, model, version, service packs, and person or role responsible, are maintained within an inventory database. This includes servers, workstations, peripheral devices, and portable devices.</p>
+
+        <h3>2.2 Software Components List</h3>
+        <p>A comprehensive list of system software and application software installed on the CMS is available, including details for each operating system and server configuration.</p>
+
+    </div>
+</div>
+  <!-- Requirements -->
+<!-- Requirements -->
+<div class="container">
+    <center>
+        <h2>3. REQUIREMENTS</h2>    
+    </center>
+
+    <div class="section-content" style="max-width: 800px; margin: 0 auto; text-align: left;">
+        <center><h2>Description for the System Security Plan (SSP)</h2></center>
+        <p>This section outlines the specific security controls and practices that must be implemented to ensure compliance with the National Institute of Standards and Technology (NIST) standards, specifically as per NIST SP 800-171 guidelines. Each requirement is designed to secure Controlled Unclassified Information (CUI) within the system environment, covering areas such as access control, audit, configuration management, identification and authentication, incident response, physical protection, risk assessment, and system and information integrity.</p>
+        <p>Each requirement is followed by options to document its current implementation status within the organization:</p>
+        <ul>
+            <li><strong>Implemented</strong>: The requirement is currently fulfilled by the existing security controls and practices.</li>
+            <li><strong>Planned to be Implemented</strong>: There is a documented plan to implement the requirement.</li>
+            <li><strong>Not Applicable</strong>: The requirement is deemed not relevant for this specific environment, with an option to explain the rationale.</li>
+        </ul>
+        <p>This format allows for clear tracking and compliance verification, ensuring that each control is addressed appropriately as per regulatory and organizational standards.</p>
+    </div>
+</div>
+
+
 
     <!-- 3.1 Access Control -->
     <div class="section">
-        <h3>3.1 Access Control</h3>
+     <h3>3.1 Access Control</h3>
 
         <div class="requirement">
             <label>3.1.1 Limit system access to authorized users:</label>
@@ -445,7 +593,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.2 Awareness and Training</h3>
+       <center><h3>3.2 Awareness and Training</h3></center> 
         
         <div class="requirement">
             <label>3.2.1 Ensure that managers, systems administrators, and users of organizational systems are made aware of the security risks associated with their activities and of the applicable policies, standards, and procedures related to the security of those systems:</label>
@@ -474,7 +622,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.3 Audit and Accountability</h3>
+       <center><h3>3.3 Audit and Accountability</h3></center> 
         
         <div class="requirement">
             <label>3.3.1 Create and retain system audit logs and records to the extent needed to enable the monitoring, analysis, investigation, and reporting of unlawful or unauthorized system activity:</label>
@@ -557,7 +705,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.4 Configuration Management</h3>
+        <center><h3>3.4 Configuration Management</h3></center>
         
         <div class="requirement">
             <label>3.4.1 Establish and maintain baseline configurations and inventories of organizational systems (including hardware, software, firmware, and documentation) throughout the respective system development life cycles:</label>
@@ -639,7 +787,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.5 Identification and Authentication</h3>
+        <center><h3>3.5 Identification and Authentication</h3></center>
         
         <div class="requirement">
             <label>3.5.1 Identify system users, processes acting on behalf of users, and devices:</label>
@@ -740,7 +888,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.6 Incident Response</h3>
+        <center><h3>3.6 Incident Response</h3></center>
         
         <div class="requirement">
             <label>3.6.1 Establish an operational incident-handling capability for organizational systems that includes preparation, detection, analysis, containment, recovery, and user response activities:</label>
@@ -769,7 +917,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.7 Maintenance</h3>
+        <center><h3>3.7 Maintenance</h3></center>
         
         <div class="requirement">
             <label>3.7.1 Perform maintenance on organizational systems:</label>
@@ -825,7 +973,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.8 Media Protection</h3>
+        <center><h3>3.8 Media Protection</h3></center>
         
         <div class="requirement">
             <label>3.8.1 Protect (i.e., physically control and securely store) system media containing CUI, both paper and digital:</label>
@@ -908,7 +1056,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.9 Personnel Security</h3>
+        <center><h3>3.9 Personnel Security</h3></center>
         
         <div class="requirement">
             <label>3.9.1 Screen individuals prior to authorizing access to organizational systems containing CUI:</label>
@@ -928,7 +1076,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.10 Physical Protection</h3>
+        <center><h3>3.10 Physical Protection</h3></center>
         
         <div class="requirement">
             <label>3.10.1 Limit physical access to organizational systems, equipment, and the respective operating environments to authorized individuals:</label>
@@ -984,7 +1132,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.11 Risk Assessment</h3>
+        <center><h3>3.11 Risk Assessment</h3></center>
         
         <div class="requirement">
             <label>3.11.1 Periodically assess the risk to organizational operations (including mission, functions, image, or reputation), organizational assets, and individuals, resulting from the operation of organizational systems and the associated processing, storage, or transmission of CUI:</label>
@@ -1013,7 +1161,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.12 Security Assessment</h3>
+        <center><h3>3.12 Security Assessment</h3></center>
         
         <div class="requirement">
             <label>3.12.1 Periodically assess the security controls in organizational systems to determine if the controls are effective in their application:</label>
@@ -1051,7 +1199,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.13 System and Communications Protection</h3>
+        <center><h3>3.13 System and Communications Protection</h3></center>
         
         <div class="requirement">
             <label>3.13.1 Monitor, control, and protect communications (i.e., information transmitted or received by organizational systems) at the external boundaries and key internal boundaries of organizational systems:</label>
@@ -1197,7 +1345,7 @@
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>
         
-        <h3>3.14 System and Information Integrity</h3>
+        <center><h3>3.14 System and Information Integrity</h3></center>
         
         <div class="requirement">
             <label>3.14.1 Identify, report, and correct system flaws in a timely manner:</label>
@@ -1261,7 +1409,90 @@
             <input type="checkbox" id="na-3-14-7"> <label for="na-3-14-7">Not Applicable</label>
             <p>Current implementation or planned implementation details. If “Not Applicable,” provide rationale.</p>
         </div>        
-                
+        
+   
+
+   <!-- 4. Plan of Action -->
+<div class="section">
+    <center><h2>4. Plan of Action</h2></center>
+    <p style="text-align: center;">Controlled Unclassified Information Plan of Action for 9Brains Compliance Management System</p>
+    
+    <table class="record-table">
+        <thead>
+            <tr>
+                <th>Weaknesses</th>
+                <th>Responsible Office/Organization</th>
+                <th>Resource Estimate</th>
+                <th>Scheduled Completion Date</th>
+                <th>Milestones with Interim Completion Dates</th>
+                <th>Changes to Milestones</th>
+                <th>How was the Weakness Identified?</th>
+                <th>Status (Ongoing or Complete)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lack of multi-factor authentication for admin accounts</td>
+                <td>IT Security Department</td>
+                <td>$5,000</td>
+                <td>2024-03-15</td>
+                <td>Phase 1: Implement MFA policy (2024-01-15); Phase 2: Deploy MFA for all admins (2024-02-15)</td>
+                <td>No changes</td>
+                <td>Internal security audit</td>
+                <td>Ongoing</td>
+            </tr>
+            <tr>
+                <td>Outdated firewall software</td>
+                <td>Network Operations</td>
+                <td>$3,500</td>
+                <td>2024-04-01</td>
+                <td>Phase 1: Review software requirements (2024-02-01); Phase 2: Update software (2024-03-01)</td>
+                <td>Adjusted completion by one month</td>
+                <td>External audit</td>
+                <td>Ongoing</td>
+            </tr>
+            <tr>
+                <td>Inadequate encryption protocols for data storage</td>
+                <td>Data Management Team</td>
+                <td>$8,000</td>
+                <td>2024-06-30</td>
+                <td>Phase 1: Research encryption solutions (2024-03-15); Phase 2: Implement encryption (2024-05-30)</td>
+                <td>Additional resources required</td>
+                <td>Risk assessment</td>
+                <td>Ongoing</td>
+            </tr>
+            <tr>
+                <td>Limited user access controls on sensitive data</td>
+                <td>Access Control Team</td>
+                <td>$2,000</td>
+                <td>2024-02-28</td>
+                <td>Phase 1: Assess access control gaps (2024-01-10); Phase 2: Implement role-based controls (2024-02-10)</td>
+                <td>No changes</td>
+                <td>User feedback</td>
+                <td>Complete</td>
+            </tr>
+            <tr>
+                <td>Weak password policies for privileged users</td>
+                <td>IT Compliance Office</td>
+                <td>$1,500</td>
+                <td>2024-01-31</td>
+                <td>Phase 1: Review current policies (2024-01-10); Phase 2: Update and enforce policies (2024-01-25)</td>
+                <td>No changes</td>
+                <td>Annual security review</td>
+                <td>Complete</td>
+            </tr>
+            <!-- Add more rows as necessary -->
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
         <h3>4. Record of Changes</h3>
 
         <table>
